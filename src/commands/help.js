@@ -12,9 +12,11 @@ module.exports = new Command({
       .readdirSync('./src/commands')
       .filter((file) => file.endsWith('.js'))
 
+    let i = 1
     for (const file of commandFiles) {
       const command = require(`./${file}`)
-      str += `Name: ${command.name}, Description: ${command.description} \n`
+      str += `${i}: \`,${command.name}\`,\nDescription: \`${command.description}\` \n`
+      i++
     }
 
     message.reply({
