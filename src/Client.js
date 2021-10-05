@@ -47,7 +47,7 @@ class Client extends Discord.Client {
     //     this.on(event.event, event.run.bind(null, this))
     //   })
 
-    this.login(config.token)
+    this.login(process.env.DISCORD_TOKEN)
   }
 }
 
