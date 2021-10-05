@@ -15,7 +15,7 @@ module.exports = new Command({
     let i = 1
     for (const file of commandFiles) {
       const command = require(`./${file}`)
-      str += `${i}: \`,${command.name}\`,\nDescription: \`${command.description}\` \n`
+      str += `${i}: \`,${command.name}\`, ${command.description} \n`
       i++
     }
 
