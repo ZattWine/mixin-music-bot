@@ -2,6 +2,7 @@ console.clear()
 
 const { Player } = require('discord-player')
 
+const config = require('./data/config.json')
 const Client = require('./Client')
 
 const client = new Client()
@@ -46,6 +47,10 @@ player.on('queueEnd', (queue) => {
 
 client.on('ready', () => {
   console.log('🚀 Mixin music bot is now online!')
+})
+
+client.on('ready', function () {
+  client.user.setActivity(config.activity, { type: config.activityType })
 })
 
 client.on('messageCreate', async (message) => {
